@@ -31,10 +31,10 @@ console.log(findLongestWord())
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10]
 
 function sumNumbers(array) {
-  //Our code
+  return numbers.reduce((prev, curr) => {return prev + curr})
 }
 
-//sumNumbers(numbers)
+sumNumbers(numbers)
 
 /* Let's create a new function sum() that calculates the sum for array filled with (almost) any type of data. 
   Note that strings should have their length added to the total, 
@@ -43,6 +43,20 @@ function sumNumbers(array) {
 const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10]
 
 function sum(array) {
-  //Our code
+  let len = array.length
+  let sumOfArr =0;
+    for(let i =0; i<len; i++){
+        if(typeof(array[i]) === 'string'){
+            let strLen = array[i].length
+            sumOfArr += strLen
+        }
+        else if(typeof(array[i]) === Boolean){
+                if(array[i] === true){sumOfArr += 1}
+                else{ sumOfArr += 0}
+        }
+        else{ sumOfArr += array[i]}
+    }
+    console.log(sumOfArr , 'sumOfArr')
+    return sumOfArr
 }
-//sum(mixedArr)
+sum(mixedArr)
