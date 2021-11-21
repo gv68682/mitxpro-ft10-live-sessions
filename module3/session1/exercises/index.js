@@ -36,6 +36,8 @@ function sumNumbers(array) {
 
 sumNumbers(numbers)
 
+//Exercise 3
+
 /* Let's create a new function sum() that calculates the sum for array filled with (almost) any type of data. 
   Note that strings should have their length added to the total, 
   and boolean values should be coerced into their corresponding numeric values*/
@@ -60,3 +62,35 @@ function sum(array) {
     return sumOfArr
 }
 sum(mixedArr)
+
+//Exercise 4
+//Filter
+let objArr= [
+  {foodId: 1, hasCheese: false}, 
+  {foodId: 2, hasCheese: false},
+  {foodId: 3, hasCheese: true},
+  {foodId: 4, hasCheese: true}]
+
+let filterArr = objArr.filter(function(item){ return !item.hasCheese})
+console.log(filterArr)
+
+//-----------------
+//ForEach
+
+let studentMarks= [
+  {subject: "math", score: 100}, 
+  {subject: "science", score: 98},
+  {subject: "language", score: 95},
+  {subject: "socialStudies" , score: 90},
+  {subject: "pe", score: 100}
+  ]
+
+let avgScore = 0;
+let totalScore=0;
+function getAvgScore(subject, counter, array){
+  totalScore += subject.score;
+  avgScore = totalScore/array.length
+}
+
+studentMarks.forEach(getAvgScore)
+console.log(avgScore);
